@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEFLIZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">NEFLIZ</div>
+        <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Movies</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Series</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Trends Now</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Popular</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Preference</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Recently Added</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="showWatchList()">My Watchlist</a></li>
+        </ul>
+        <div class="autocomplete">
+            <input type="text" id="movieTitle" placeholder="Select a movie...">
+            <div id="autocompleteList" class="autocomplete-items"></div>
+            <button class="btn btn-primary" onclick="getRecommendations()">Show Recommendations</button>
+        </div>
+        <div id="hero" class="hero">
+            <div id="heroContent" class="hero-content">
+                <div id="heroDuration" class="duration"></div>
+                <div id="heroRating" class="rating"></div>
+                <h1 id="heroTitle"></h1>
+                <p id="heroOverview" class="overview"></p>
+                <button class="btn btn-primary" onclick="playMovie()">WATCH</button>
+                <button class="btn btn-secondary" onclick="addToList()">ADD LIST</button>
+            </div>
+        </div>
+        <h2 class="genre-heading">Get Top Movies Based on Genre</h2>
+        <div class="genre-buttons">
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Action')">Action</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Adventure')">Adventure</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Animation')">Animation</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Comedy')">Comedy</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Crime')">Crime</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Documentary')">Documentary</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Drama')">Drama</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Family')">Family</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Fantasy')">Fantasy</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('History')">History</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Horror')">Horror</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Music')">Music</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Mystery')">Mystery</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Romance')">Romance</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Science Fiction')">Science Fiction</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('TV Movie')">TV Movie</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Thriller')">Thriller</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('War')">War</button>
+            <button class="genre-btn btn btn-outline-danger" onclick="getMoviesByGenre('Western')">Western</button>
+        </div>
+        <div id="results" class="movie-grid"></div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
